@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f5f4ef",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary": "#775a19",
+                        "on-tertiary-container": "#4f3d00",
+                        "on-surface-variant": "#42493e",
+                        "primary-fixed": "#bcf0ae",
+                        "tertiary-fixed": "#ffe088",
+                        "outline": "#72796e",
+                        "on-secondary-container": "#785a1a",
+                        "tertiary": "#735c00",
+                        "on-primary-fixed": "#002201",
+                        "on-surface": "#1b1c19",
+                        "surface-dim": "#dbdad5",
+                        "secondary-container": "#fed488",
+                        "surface-container": "#efeee9",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface-container-highest": "#e3e3de",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f1ec",
+                        "background": "#faf9f4",
+                        "on-primary-fixed-variant": "#23501e",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline-variant": "#c2c9bb",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#2d5a27",
+                        "surface-tint": "#3b6934",
+                        "on-background": "#1b1c19",
+                        "surface-variant": "#e3e3de",
+                        "on-primary-container": "#9dd090",
+                        "surface-container-high": "#e9e8e3",
+                        "inverse-surface": "#30312e",
+                        "primary": "#154212",
+                        "tertiary-container": "#cca730",
+                        "secondary-fixed-dim": "#e9c176",
+                        "on-secondary-fixed": "#261900",
+                        "primary-fixed-dim": "#a1d494",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#faf9f4",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#a1d494",
+                        "surface": "#faf9f4",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-tertiary-fixed": "#241a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .botanical-shadow {
+            box-shadow: 0 20px 40px rgba(27, 28, 25, 0.05);
+        }
+        .luxury-gradient {
+            background: linear-gradient(135deg, #154212 0%, #2d5a27 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f4]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(27,28,25,0.05)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
+<div class="text-2xl font-bold text-[#154212] tracking-tight font-headline">Nugie Skincare & Herbal SR12</div>
+<div class="hidden md:flex items-center space-x-8 font-headline text-lg font-medium">
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Home</a>
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Skincare</a>
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Herbal</a>
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Best Sellers</a>
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">About Us</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-[#154212] transition-all duration-300 hover:scale-110" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined text-[#154212] transition-all duration-300 hover:scale-110" data-icon="person">person</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-20 max-w-3xl">
+<span class="text-secondary font-label text-[0.6875rem] font-extrabold uppercase tracking-widest mb-4 block">Community Voices</span>
+<h1 class="text-on-surface font-headline text-[3.5rem] leading-tight font-bold -tracking-[0.02em] mb-6">Real Results, Naturally Rooted.</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+                Discover the transformative power of botanical wisdom through the lived experiences of our Nugie Skincare community. From herbal healing to radiant skin health.
+            </p>
+</header>
+<!-- Testimonials Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Featured Transformation Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 botanical-shadow transition-all duration-300 hover:scale-[1.01] flex flex-col md:flex-row gap-8 border border-outline-variant/10">
+<div class="md:w-1/2">
+<div class="relative grid grid-cols-2 gap-2 rounded-lg overflow-hidden h-full min-h-[300px]">
+<div class="relative">
+<img class="w-full h-full object-cover grayscale-[40%]" data-alt="close-up of a woman's face with textured skin before using botanical skincare, natural daylight, soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqBpi-QUXmscYfocMybxlmNw1VFJ2jh4lVAaemaM2HcgWwI0ZZmyf02bUYKpy5HWXmIyIBZGKT4vNwFvlgQvcaZCZHtX6p0GYKM6unTI-VA2HWg8Pm420uJ0Q6K-xwLWBrKK9RsQe0cr8aVV3-q1reBgx0oWUAB9xDVX1Ywp3HT2V3pmQkxHrgy_HxQeCONSOks_M6B_niKsVGdhzJcio27FdncQxQ4Ulu3a_sOVwnm3OGh2Xdxotl6_a_7gy5KxgXneXydiMIWKU"/>
+<span class="absolute bottom-2 left-2 bg-surface/80 backdrop-blur px-2 py-1 text-[10px] font-bold rounded">BEFORE</span>
+</div>
+<div class="relative">
+<img class="w-full h-full object-cover" data-alt="close-up of a woman's glowing, clear skin after using herbal skincare, radiant warm lighting, high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCthkGom5Ptnokj6AYIq8Rz6F3rgSCRPHDWV8YaXNeRc6DV2uEUClhYeU97WaMtPDkMRLTaPjP02D00p-FTEo5K6_oODOH8ZIt0ojqM8dLANMBTCA_WKrHr07iT7juz4JyAF7sD7W2WAZ8HATJcABjEEASniPJdePeDIhK-cfkATcKHOAv3kNbnB1PdLt6swP2dlzUJpCCHgTp1qc6_6Qr4I6R6l1JF6PDafRV0byPkTthFYWAHai5RYTzEU47H1qL4dsl7IHAlngw"/>
+<span class="absolute bottom-2 left-2 bg-primary/80 backdrop-blur text-white px-2 py-1 text-[10px] font-bold rounded">AFTER</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 flex flex-col justify-center">
+<div class="flex text-secondary mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">"The Acne Care Salicyl serum changed my skin in just 4 weeks. My confidence is back."</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">I tried everything for my adult acne. SR12's herbal approach was the only thing that didn't irritate my sensitive skin while actually clearing the breakouts.</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a confident woman smiling, soft natural lighting, high-end skincare aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB0FXqjuGuVbYGPgYtSO6UEyglaktDn00UNf1DmobN9gPy6VBHUh2gAecI3Rz4xwq3fSzJEt2lXdn0wMacJnErJJ-_7vRJz50VJgN8sWJHNgiPilXLA8VA8ioeXvmclVuEV_KgKLmSmwzXTwCHgKQn-tFxSWEHw7F2SRgQw7n-SS5j54oH-5tPz4mVR_vGUniiG-0WlcUqrY2T4JKJAttzaiEx0lNIzttaMwaKPAYg-1mfbP2fPya99Pj5_pL0Sp8fwcSbZpbNNc4"/>
+<div>
+<p class="font-bold text-primary">Siti Rahmawati</p>
+<p class="text-xs text-on-surface-variant font-medium">Verified Customer • Jakarta</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Small Profile Card 1 -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-8 transition-all duration-300 hover:bg-surface-container-lowest hover:botanical-shadow">
+<div class="flex text-secondary mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface font-medium mb-6">"Their Honey Soap is a staple in my morning routine. My skin feels so soft and never dry!"</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed">AN</div>
+<div>
+<p class="text-sm font-bold">Andini N.</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Bandung</p>
+</div>
+</div>
+</div>
+<!-- Vertical Product Focus -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl overflow-hidden botanical-shadow group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="aesthetic display of skincare products on a wooden surface with herbal leaves, warm botanical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnqSw4WzaPANW2b3iMeZOp897qjyyaPdkmrjU5naATPzJteYuzC-6wGhbY3rgrvpDAeJZtHsdVf-W_MpkmppCPoG5Z6BfHxe7mngnapA1CMjw3Dsnf2hq2MgaUy8Sc6rFEqarx51DWEy3MODBVxPlsdh4KFPBZWkoDbgKx1wCMSrKqqoFWdU7uJEPBGq1D2NTpg3lnLknl1DdVEJSC1cxf2-St3zblp9voezBfNBoT42slUhU9j_i1_9KQvzw9zSBNGQXwvf1YHX0"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-surface text-primary px-4 py-2 text-xs font-bold rounded-full">VIEW PRODUCT</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-bold text-lg mb-2">Herbal Facial Wash</h4>
+<p class="text-on-surface-variant text-sm mb-4">"It smells like a literal garden and clears away daily pollution without any tightness."</p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<span class="text-xs font-bold text-secondary">Aisyah Putri</span>
+<div class="flex">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Wide Quote Block -->
+<div class="md:col-span-8 bg-primary rounded-xl p-10 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-container rounded-full opacity-20 blur-3xl"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary-fixed text-6xl opacity-30 mb-4" data-icon="format_quote">format_quote</span>
+<h2 class="font-headline text-3xl text-white font-medium italic leading-snug mb-8">
+                        "The SR12 Lip Care isn't just a balm; it's a treatment. After years of dark, chapped lips, I finally have my natural pink hue back. Truly a miracle from nature."
+                    </h2>
+<div class="flex items-center gap-4">
+<div class="w-1px h-12 bg-secondary/50"></div>
+<div>
+<p class="text-white font-bold text-lg">Dewi Lestari</p>
+<p class="text-on-primary-container text-sm">Long-term User since 2021</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Video/Interaction Grid Item -->
+<div class="md:col-span-4 bg-secondary-fixed-dim rounded-xl p-8 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-3 text-on-secondary-fixed">Share Your Story</h4>
+<p class="text-on-secondary-fixed-variant text-sm mb-6">Join our community of natural beauty enthusiasts. Tag us @NugieSkincare for a chance to be featured!</p>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-md font-bold text-sm luxury-gradient hover:scale-105 transition-all">Submit Review</button>
+</div>
+<!-- Standard Masonry-style Grid Item -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a young woman with radiant skin, smiling softly, natural aesthetic photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAexpySm3L-EXiyKBgi-UrhwHFJfSAUHOjcSigxztcrnGW91s5p4UjjS6AksJRLJWG4nX-92WyxA1l4zYUhUKk95LfYrZZ4sp3esxeRkYn7eFkREnOTJ87sfjT-K1eTNEQbCtuFdI_LcMrK_71lCqxM_NYYyllhBI_9Bn2Lv3CEqqEPXY5xCCBOEeQWXPX0dijdRUj4leEsNPKAp-AZWk8nT1RSOrQl0T-TaQRLNlydY28ECj8kI1Voedov1nW3-bLMgcI1s7Q1c2w"/>
+<div>
+<p class="text-sm font-bold">Farah Z.</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Verified Buyer</p>
+</div>
+</div>
+<p class="text-sm leading-relaxed text-on-surface-variant italic mb-4">"The Vico Oil is my holy grail for everything. From hair mask to makeup remover, SR12 quality is unmatched by local brands."</p>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Standard Masonry-style Grid Item 2 -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-stone-300 flex items-center justify-center font-black text-stone-600">RP</div>
+<div>
+<p class="text-sm font-bold">Rizki P.</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Verified Buyer</p>
+</div>
+</div>
+<p class="text-sm leading-relaxed text-on-surface-variant italic mb-4">"Started using the Herbal Brightening Cream. It's been 2 weeks and I already see my dark spots fading. Non-sticky and smells like tea!"</p>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star">star</span>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-20 text-center">
+<button class="group inline-flex items-center gap-2 text-primary font-bold border-b-2 border-secondary/30 pb-1 hover:border-secondary transition-all">
+                Load More Experiences
+                <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full border-t-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-lg font-bold text-[#154212] mb-4">Nugie Skincare</div>
+<p class="text-stone-500 text-sm leading-relaxed">Your trusted distributor for authentic SR12 herbal and skincare products. Rooted in nature, proven by science.</p>
+</div>
+<div>
+<h5 class="font-bold text-[#154212] mb-6">Explore</h5>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-all" href="#">Skincare Rituals</a></li>
+<li><a class="text-stone-600 hover:text-[#154212] text-sm transition-all" href="#">Herbal Remedies</a></li>
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-refresh="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<script>
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"surface-container-low": "#f5f4ef",
+"on-secondary": "#ffffff",
+"error": "#ba1a1a",
+"secondary": "#775a19",
+"on-tertiary-container": "#4f3d00",
+"on-surface-variant": "#42493e",
+"primary-fixed": "#bcf0ae",
+"tertiary-fixed": "#ffe088",
+"outline": "#72796e",
+"on-secondary-container": "#785a1a",
+"tertiary": "#735c00",
+"on-primary-fixed": "#002201",
+"on-surface": "#1b1c19",
+"surface-dim": "#dbdad5",
+"secondary-container": "#fed488",
+"surface-container": "#efeee9",
+"tertiary-fixed-dim": "#e9c349",
+"surface-container-highest": "#e3e3de",
+"on-error-container": "#93000a",
+"inverse-on-surface": "#f2f1ec",
+"background": "#faf9f4",
+"on-primary-fixed-variant": "#23501e",
+"on-tertiary-fixed-variant": "#574500",
+"outline-variant": "#c2c9bb",
+"on-primary": "#ffffff",
+"secondary-fixed": "#ffdea5",
+"surface-container-lowest": "#ffffff",
+"primary-container": "#2d5a27",
+"surface-tint": "#3b6934",
+"on-background": "#1b1c19",
+"surface-variant": "#e3e3de",
+"on-primary-container": "#9dd090",
+"surface-container-high": "#e9e8e3",
+"inverse-surface": "#30312e",
+"primary": "#154212",
+"tertiary-container": "#cca730",
+"secondary-fixed-dim": "#e9c176",
+"on-secondary-fixed": "#261900",
+"primary-fixed-dim": "#a1d494",
+"on-tertiary": "#ffffff",
+"on-error": "#ffffff",
+"surface-bright": "#faf9f4",
+"error-container": "#ffdad6",
+"inverse-primary": "#a1d494",
+"surface": "#faf9f4",
+"on-secondary-fixed-variant": "#5d4201",
+"on-tertiary-fixed": "#241a00"
+},
+borderRadius: {
+"DEFAULT": "0.125rem",
+"lg": "0.25rem",
+"xl": "0.5rem",
+"full": "0.75rem"
+},
+fontFamily: {
+"headline": ["Noto Serif"],
+"body": ["Manrope"],
+"label": ["Manrope"]
+}
+},
+},
+}
+</script>
+
+<style>
+.material-symbols-outlined {
+font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.botanical-shadow {
+box-shadow: 0 20px 40px rgba(27, 28, 25, 0.05);
+}
+.luxury-gradient {
+background: linear-gradient(135deg, #154212 0%, #2d5a27 100%);
+}
+</style>
+
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f4]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(27,28,25,0.05)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
+<div class="text-2xl font-bold text-[#154212] tracking-tight font-headline">Nugie Skincare & Herbal SR12</div>
+<div class="hidden md:flex items-center space-x-8 font-headline text-lg font-medium">
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Home</a>
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Skincare</a>
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Herbal</a>
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Best Sellers</a>
+<a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">About Us</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-[#154212] transition-all duration-300 hover:scale-110" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined text-[#154212] transition-all duration-300 hover:scale-110" data-icon="person">person</button>
+</div>
+</div>
+</nav>
+
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-20 max-w-3xl">
+<span class="text-secondary font-label text-[0.6875rem] font-extrabold uppercase tracking-widest mb-4 block">Community Voices</span>
+<h1 class="text-on-surface font-headline text-[3.5rem] leading-tight font-bold -tracking-[0.02em] mb-6">Real Results, Naturally Rooted.</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+Discover the transformative power of botanical wisdom through the lived experiences of our Nugie Skincare community. From herbal healing to radiant skin health.
+</p>
+</header>
+
+<!-- Testimonials Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Featured Transformation Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 botanical-shadow transition-all duration-300 hover:scale-[1.01] flex flex-col md:flex-row gap-8 border border-outline-variant/10">
+<div class="md:w-1/2">
+<div class="relative grid grid-cols-2 gap-2 rounded-lg overflow-hidden h-full min-h-[300px]">
+<div class="relative">
+<img class="w-full h-full object-cover grayscale-[40%]" alt="close-up of a woman's face with textured skin before using botanical skincare, natural daylight, soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqBpi-QUXmscYfocMybxlmNw1VFJ2jh4lVAaemaM2HcgWwI0ZZmyf02bUYKpy5HWXmIyIBZGKT4vNwFvlgQvcaZCZHtX6p0GYKM6unTI-VA2HWg8Pm420uJ0Q6K-xwLWBrKK9RsQe0cr8aVV3-q1reBgx0oWUAB9xDVX1Ywp3HT2V3pmQkxHrgy_HxQeCONSOks_M6B_niKsVGdhzJcio27FdncQxQ4Ulu3a_sOVwnm3OGh2Xdxotl6_a_7gy5KxgXneXydiMIWKU"/>
+<span class="absolute bottom-2 left-2 bg-surface/80 backdrop-blur px-2 py-1 text-[10px] font-bold rounded">BEFORE</span>
+</div>
+<div class="relative">
+<img class="w-full h-full object-cover" alt="close-up of a woman's glowing, clear skin after using herbal skincare, radiant warm lighting, high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCthkGom5Ptnokj6AYIq8Rz6F3rgSCRPHDWV8YaXNeRc6DV2uEUClhYeU97WaMtPDkMRLTaPjP02D00p-FTEo5K6_oODOH8ZIt0ojqM8dLANMBTCA_WKrHr07iT7juz4JyAF7sD2WAZ8HATJcABjEEASniPJdePeDIhK-cfkATcKHOAv3kNbnB1PdLt6swP2dlzUJpCCHgTp1qc6_6Qr4I6R6l1JF6PDafRV0byPkTthFYWAHai5RYTzEU47H1qL4dsl7IHAlngw"/>
+<span class="absolute bottom-2 left-2 bg-primary/80 backdrop-blur text-white px-2 py-1 text-[10px] font-bold rounded">AFTER</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 flex flex-col justify-center">
+<div class="flex text-secondary mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">"The Acne Care Salicyl serum changed my skin in just 4 weeks. My confidence is back."</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">I tried everything for my adult acne. SR12's herbal approach was the only thing that didn't irritate my sensitive skin while actually clearing the breakouts.</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" alt="portrait of a confident woman smiling, soft natural lighting, high-end skincare aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB0FXqjuGuVbYGPgYtSO6UEyglaktDn00UNf1DmobN9gPy6VBHUh2gAecI3Rz4xwq3fSzJEt2lXdn0wMacJnErJJ-_7vRJz50VJgN8sWJHNgiPilXLA8VA8ioeXvmclVuEV_KgKLmSmwzXTwCHgKQn-tFxSWEHw7F2SRgQw7n-SS5j54oH-5tPz4mVR_vGUniiG-0WlcUqrY2T4JKJAttzaiEx0lNIzttaMwaKPAYg-1mfbP2fPya99Pj5_pL0Sp8fwcSbZpbNNc4"/>
+<div>
+<p class="font-bold text-primary">Siti Rahmawati</p>
+<p class="text-xs text-on-surface-variant font-medium">Verified Customer • Jakarta</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Small Profile Card 1 -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-8 transition-all duration-300 hover:bg-surface-container-lowest hover:botanical-shadow">
+<div class="flex text-secondary mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface font-medium mb-6">"Their Honey Soap is a staple in my morning routine. My skin feels so soft and never dry!"</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed">AN</div>
+<div>
+<p class="text-sm font-bold">Andini N.</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Bandung</p>
+</div>
+</div>
+</div>
+<!-- Vertical Product Focus -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl overflow-hidden botanical-shadow group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="aesthetic display of skincare products on a wooden surface with herbal leaves, warm botanical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnqSw4WzaPANW2b3iMeZOp897qjyyaPdkmrjU5naATPzJteYuzC-6wGhbY3rgrvpDAeJZtHsdVf-W_MpkmppCPoG5Z6BfHxe7mngnapA1CMjw3Dsnf2hq2MgaUy8Sc6rFEqarx51DWEy3MODBVxPlsdh4KFPBZWkoDbgKx1wCMSrKqqoFWdU7uJEPBGq1D2NTpg3lnLknl1DdVEJSC1cxf2-St3zblp9voezBfNBoT42slUhU9j_i1_9KQvzw9zSBNGQXwvf1YHX0"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-surface text-primary px-4 py-2 text-xs font-bold rounded-full">VIEW PRODUCT</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-bold text-lg mb-2">Herbal Facial Wash</h4>
+<p class="text-on-surface-variant text-sm mb-4">"It smells like a literal garden and clears away daily pollution without any tightness."</p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<span class="text-xs font-bold text-secondary">Aisyah Putri</span>
+<div class="flex">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Wide Quote Block -->
+<div class="md:col-span-8 bg-primary rounded-xl p-10 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-container rounded-full opacity-20 blur-3xl"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary-fixed text-6xl opacity-30 mb-4" data-icon="format_quote">format_quote</span>
+<h2 class="font-headline text-3xl text-white font-medium italic leading-snug mb-8">
+"The SR12 Lip Care isn't just a balm; it's a treatment. After years of dark, chapped lips, I finally have my natural pink hue back. Truly a miracle from nature."
+</h2>
+<div class="flex items-center gap-4">
+<div class="w-1px h-12 bg-secondary/50"></div>
+<div>
+<p class="text-white font-bold text-lg">Dewi Lestari</p>
+<p class="text-on-primary-container text-sm">Long-term User since 2021</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Video/Interaction Grid Item -->
+<div class="md:col-span-4 bg-secondary-fixed-dim rounded-xl p-8 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-3 text-on-secondary-fixed">Share Your Story</h4>
+<p class="text-on-secondary-fixed-variant text-sm mb-6">Join our community of natural beauty enthusiasts. Tag us @NugieSkincare for a chance to be featured!</p>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-md font-bold text-sm luxury-gradient hover:scale-105 transition-all">Submit Review</button>
+</div>
+<!-- Standard Masonry-style Grid Item -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<img class="w-12 h-12 rounded-full object-cover" alt="portrait of a young woman with radiant skin, smiling softly, natural aesthetic photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAexpySm3L-EXiyKBgi-UrhwHFJfSAUHOjcSigxztcrnGW91s5p4UjjS6AksJRLJWG4nX-92WyxA1l4zYUhUKk95LfYrZZ4sp3esxeRkYn7eFkREnOTJ87sfjT-K1eTNEQbCtuFdI_LcMrK_71lCqxM_NYYyllhBI_9Bn2Lv3CEqqEPXY5xCCBOEeQWXPX0dijdRUj4leEsNPKAp-AZWk8nT1RSOrQl0T-TaQRLNlydY28ECj8kI1Voedov1nW3-bLMgcI1s7Q1c2w"/>
+<div>
+<p class="text-sm font-bold">Farah Z.</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Verified Buyer</p>
+</div>
+</div>
+<p class="text-sm leading-relaxed text-on-surface-variant italic mb-4">"The Vico Oil is my holy grail for everything. From hair mask to makeup remover, SR12 quality is unmatched by local brands."</p>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Standard Masonry-style Grid Item 2 -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-stone-300 flex items-center justify-center font-black text-stone-600">RP</div>
+<div>
+<p class="text-sm font-bold">Rizki P.</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Verified Buyer</p>
+</div>
+</div>
+<p class="text-sm leading-relaxed text-on-surface-variant italic mb-4">"Started using the Herbal Brightening Cream. It's been 2 weeks and I already see my dark spots fading. Non-sticky and smells like tea!"</p>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="star">star</span>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-20 text-center">
+<button class="group inline-flex items-center gap-2 text-primary font-bold border-b-2 border-secondary/30 pb-1 hover:border-secondary transition-all">
+Load More Experiences
+<span class="material-symbols-outlined group-hover:translate-y-1 transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full border-t-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-lg font-bold text-[#154212] mb-4">Nugie Skincare</div>
+<p class="text-stone-500 text-sm leading-relaxed">Your trusted distributor for authentic SR12 herbal and skincare products. Rooted in nature, proven by science.</p>
+</div>
+<div>
+<h5 class="font-bold text-[#154212] mb-6">Explore</h5>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-all" href="#">Skincare Rituals</a></li>
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-all" href="#">Herbal Remedies</a></li>
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-all" href="#">Best Sellers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-[#154212] mb-6">Customer Care</h5>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-all" href="#">Shipping Info</a></li>
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-500 hover:text-[#154212] text-sm transition-all" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-[#154212] mb-6">Join Our Glow</h5>
+<p class="text-stone-500 text-xs mb-4">Subscribe for botanical beauty tips and exclusive offers.</p>
+<div class="flex gap-2">
+<input class="bg-white border-0 text-sm rounded px-4 py-2 w-full focus:ring-1 focus:ring-primary" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white p-2 rounded material-symbols-outlined" data-icon="send">send</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 pb-8 flex flex-col md:flex-row justify-between items-center text-xs text-stone-500 gap-4">
+<div>© 2023 Nugie Skincare & Herbal SR12. All rights reserved.</div>
+<div class="flex gap-6">
+<a class="hover:text-[#154212]" href="#">Instagram</a>
+<a class="hover:text-[#154212]" href="#">WhatsApp</a>
+<a class="hover:text-[#154212]" href="#">Shopee</a>
+</div>
+</div>
+</footer>
+<!-- WhatsApp FAB -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-[#154212] text-white rounded-full flex items-center justify-center botanical-shadow z-[60] group">
+<div class="absolute inset-0 rounded-full bg-[#fed488] opacity-30 scale-125 group-hover:scale-150 transition-transform duration-500"></div>
+<span class="material-symbols-outlined relative z-10" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+</button>
+
+</body></html>

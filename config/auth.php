@@ -1,7 +1,10 @@
 <?php
 
 return [
-    'default' => env('AUTH_GUARD', 'web'),
+    'defaults' => [
+        'guard' => 'web',
+        'passwords' => 'users',
+    ],
     'guards' => [
         'web' => [
             'driver' => 'session',

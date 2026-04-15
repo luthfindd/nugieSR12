@@ -19,7 +19,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Testimonials page
 Route::get('/testimonial', function () {
-    return file_get_contents(public_path('testimonials.html'));
+    return view('pages.testimonials');
 })->name('testimonial');
 
 Route::prefix('products')->name('products.')->group(function () {

@@ -109,9 +109,11 @@
                 Nugie Skincare & Herbal SR12
             </a>
             <div class="hidden md:flex items-center space-x-8 font-headline text-lg font-medium">
-                <a class="text-[#154212] border-b-2 border-[#775a19] pb-1 hover:scale-105 transition-all duration-300 ease-out" href="{{ route('home') }}">Home</a>
-                <a class="text-stone-600 dark:text-stone-400 hover:text-[#154212] hover:scale-105 transition-all duration-300 ease-out" href="{{ route('products.index') }}">Produk</a>
-                <a class="text-stone-600 dark:text-stone-400 hover:text-[#154212] hover:scale-105 transition-all duration-300 ease-out" href="#">Tentang Kami</a>
+                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Home</a>
+                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Skincare</a>
+                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Herbal</a>
+                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Best Sellers</a>
+                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">About Us</a>
             </div>
             <div class="flex items-center space-x-6 text-[#154212]">
                 <button class="hover:scale-105 transition-all duration-300 ease-out">

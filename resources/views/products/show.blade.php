@@ -52,9 +52,9 @@
                     <button class="editorial-gradient text-white w-full py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
                         Tambah ke Keranjang
                     </button>
-                    <button class="w-full bg-surface-container text-on-surface py-4 rounded-xl font-semibold hover:bg-surface-container-high transition-colors">
-                        Beli Sekarang
-                    </button>
+<a href="{{ route('product.detail', $product->slug) }}" class="w-full bg-surface-container text-on-surface py-4 rounded-xl font-semibold hover:bg-surface-container-high transition-colors text-center block">
+                        👁️ Lihat Detail Lengkap
+                    </a>
                 </div>
 
                 <!-- Product Info -->

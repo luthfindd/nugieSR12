@@ -17,10 +17,16 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Testimonials page
+// Demo pages
 Route::get('/testimonial', function () {
-    return view('pages.testimonials');
+    return view('testimonials');
 })->name('testimonial');
+
+Route::get('/product-detail/{slug?}', function ($slug = null) {
+    $product = $slug ? \App\Models\Product::where('slug', $slug)->first() : \App\Models\Product::first();
+    return view('product-detail', compact('product'));
+})->name('product.detail');
+
 
 Route::prefix('products')->name('products.')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');

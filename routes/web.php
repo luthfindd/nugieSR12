@@ -19,6 +19,8 @@ use App\Http\Controllers\Admin\InventoryController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::redirect('/login', '/admin/login')->name('login.redirect');
+
 // Demo pages
 Route::get('/testimonial', function () {
     return view('testimonials');
@@ -36,6 +38,14 @@ Route::prefix('products')->name('products.')->group(function () {
 });
 
 Route::get('/category/{slug}', [ProductController::class, 'by_category'])->name('category');
+
+Route::controller(\App\Http\Controllers\CartController::class)->group(function () {
+    Route::get('/cart', 'index')->name('cart.index');
+    Route::post('/cart/add', 'add')->name('cart.add');
+    Route::post('/cart/update', 'update')->name('cart.update');
+    Route::delete('/cart/remove/{id}', 'remove')->name('cart.remove');
+    Route::delete('/cart/clear', 'clear')->name('cart.clear');
+});
 
 /*
 |--------------------------------------------------------------------------

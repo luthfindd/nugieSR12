@@ -113,18 +113,42 @@
                 <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="{{ route('products.index') }}">Products</a>
                 <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="{{ route('testimonial') }}">Testimonials</a>
             </div>
-            <div class="flex items-center space-x-6 text-[#154212]">
-                <button class="hover:scale-105 transition-all duration-300 ease-out">
+<div class="flex items-center space-x-6 text-[#154212]">
+                <a href="#cart" class="hover:scale-105 transition-all duration-300 ease-out relative">
                     <span class="material-symbols-outlined">shopping_bag</span>
-                </button>
+                    @if(session()->has('cart') && count(session('cart')) > 0)
+                        <span class="absolute -top-2 -right-2 bg-error text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold text-sm">{{ count(session('cart')) }}</span>
+                    @endif
+                </a>
                 <button class="hover:scale-105 transition-all duration-300 ease-out">
                     <span class="material-symbols-outlined">person</span>
                 </button>
             </div>
+
+            @include('partials.cart-sidebar')
         </div>
     </nav>
 
-    <main class="mt-20">
+<main class="mt-20">
+        <!-- Flash Messages -->
+        @if (session('success'))
+            <div id="flash-success" class="fixed top-24 right-8 z-[80] bg-green-500 text-white px-6 py-4 rounded-xl shadow-2xl transform translate-y-10 opacity-0 transition-all duration-500 max-w-sm">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <span>{{ session('success') }}</span>
+                </div>
+            </div>
+            <script>
+                setTimeout(() => {
+                    const flash = document.getElementById('flash-success');
+                    flash.classList.remove('translate-y-10', 'opacity-0');
+                    setTimeout(() => {
+                        flash.classList.add('translate-y-10', 'opacity-0');
+                    }, 3000);
+                }, 100);
+            </script>
+        @endif
+
         @yield('content')
     </main>
 

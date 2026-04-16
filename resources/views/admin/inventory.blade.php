@@ -82,7 +82,7 @@
                         <div class="flex items-center gap-4">
                             <div class="w-14 h-14 rounded-lg bg-surface overflow-hidden shrink-0">
                                 @if ($product->image)
-                                    <img src="{{ Str::startsWith($product->image, ['http://', 'https://']) ? $product->image : Storage::url($product->image) }}"
+                                    <img src="{{ $product->image_url }}"
                                          alt="{{ $product->name }}"
                                          class="w-full h-full object-cover"/>
                                 @else

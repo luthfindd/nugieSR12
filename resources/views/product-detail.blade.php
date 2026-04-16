@@ -119,7 +119,7 @@
 <!-- Left: Product Image & Gallery -->
 <div class="lg:col-span-7 sticky top-32">
 <div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-surface-container-low group">
-<img alt="{{ $product->name ?? 'SR12 Revitalizing Serum' }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ $product->image ?? 'https://lh3.googleusercontent.com/aida-public/AB6AXuAkqqe375Zu_JlRBsl6K0Kcx-GSDGsf5p1PuwpweUPpCOgL18iui2HWNBVR7CEVPTBEWspPI7ZBGs9roOKNR5rVBhGkf1yJDrkH1h765DApUU5WqKz1ZvQWAtjSmAb0XS0tZsyC6IvupxIT5P6m87F-c994v1V85Rn3nfGrPopqKn8cdedCb1WGyPYQgWggig6A_5MR7PgIrp69gP2l50UJZj2n1wc7ocC2u4r5WikqDSS1QH3bf10yL9qPecRQ3s5-nCKafTWv0Jc' }}">
+<img alt="{{ $product->name ?? 'SR12 Revitalizing Serum' }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ $product->image_url ?? 'https://lh3.googleusercontent.com/aida-public/AB6AXuAkqqe375Zu_JlRBsl6K0Kcx-GSDGsf5p1PuwpweUPpCOgL18iui2HWNBVR7CEVPTBEWspPI7ZBGs9roOKNR5rVBhGkf1yJDrkH1h765DApUU5WqKz1ZvQWAtjSmAb0XS0tZsyC6IvupxIT5P6m87F-c994v1V85Rn3nfGrPopqKn8cdedCb1WGyPYQgWggig6A_5MR7PgIrp69gP2l50UJZj2n1wc7ocC2u4r5WikqDSS1QH3bf10yL9qPecRQ3s5-nCKafTWv0Jc' }}">
 <div class="absolute top-6 left-6">
 <span class="bg-secondary text-on-secondary px-3 py-1 text-[0.6875rem] uppercase tracking-widest font-bold rounded-sm">Premium Selection</span>
 </div>

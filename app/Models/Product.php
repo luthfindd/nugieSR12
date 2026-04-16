@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
 class Product extends Model
 {
     use HasFactory;
@@ -25,6 +28,22 @@ class Product extends Model
         'price' => 'decimal:2',
         'is_featured' => 'boolean',
     ];
+
+    /**
+     * Get the full URL for the product image.
+     */
+    public function getImageUrlAttribute()
+    {
+        if (!$this->image) {
+            return null;
+        }
+
+        if (Str::startsWith($this->image, ['http://', 'https://'])) {
+            return $this->image;
+        }
+
+        return Storage::url($this->image);
+    }
 
     public function category()
     {

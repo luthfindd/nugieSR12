@@ -34,7 +34,7 @@
                         <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-6">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                                  alt="{{ $product->name }}" 
-                                 src="{{ $product->image }}"/>
+                                 src="{{ $product->image_url }}"/>
                             @if($product->badge)
                                 <div class="absolute top-4 {{ $product->badge == 'New Arrival' ? 'left-4 bg-white/80' : 'right-4 bg-secondary text-white' }} backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
                                     {{ $product->badge }}

@@ -109,11 +109,9 @@
                 Nugie Skincare & Herbal SR12
             </a>
             <div class="hidden md:flex items-center space-x-8 font-headline text-lg font-medium">
-                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Home</a>
-                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Skincare</a>
-                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Herbal</a>
-                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">Best Sellers</a>
-                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="#">About Us</a>
+                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="<?php echo e(route('home')); ?>">Home</a>
+                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="<?php echo e(route('products.index')); ?>">Products</a>
+                <a class="text-stone-600 hover:text-[#154212] transition-all duration-300 ease-out hover:scale-105" href="<?php echo e(route('testimonial')); ?>">Testimonials</a>
             </div>
             <div class="flex items-center space-x-6 text-[#154212]">
                 <button class="hover:scale-105 transition-all duration-300 ease-out">

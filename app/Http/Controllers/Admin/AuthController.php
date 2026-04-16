@@ -15,7 +15,7 @@ class AuthController extends Controller
     {
         // Jika sudah login, langsung ke inventory
         if (Auth::check()) {
-            return redirect()->route('admin.inventory');
+            return redirect()->route('admin.inventory.index');
         }
 
         return view('admin.login');
@@ -40,7 +40,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('admin.inventory'));
+            return redirect()->intended(route('admin.inventory.index'));
         }
 
         return back()

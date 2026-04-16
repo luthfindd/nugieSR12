@@ -15,7 +15,7 @@
             <div class="flex items-center justify-center bg-surface-container-low rounded-xl overflow-hidden h-[500px]">
                 <img class="w-full h-full object-cover" 
                      alt="<?php echo e($product->name); ?>" 
-                     src="<?php echo e($product->image); ?>"/>
+                     src="<?php echo e($product->image_url); ?>"/>
             </div>
 
             <!-- Product Details -->
@@ -86,7 +86,7 @@
                                     <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-6">
                                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                                              alt="<?php echo e($related->name); ?>" 
-                                             src="<?php echo e($related->image); ?>"/>
+                                             src="<?php echo e($related->image_url); ?>"/>
                                         <?php if($related->badge): ?>
                                             <div class="absolute top-4 <?php echo e($related->badge == 'New Arrival' ? 'left-4 bg-white/80' : 'right-4 bg-secondary text-white'); ?> backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
                                                 <?php echo e($related->badge); ?>

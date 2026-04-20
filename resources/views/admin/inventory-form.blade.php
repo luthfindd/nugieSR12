@@ -38,7 +38,10 @@
                         </div>
                         @endif
                         <input type="file" name="image" id="image" accept="image/*"
-                               class="flex-1 text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-container transition-all">
+                               class="flex-1 text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-container transition-all mb-4">
+                        <label class="block text-xs font-black text-on-surface-variant uppercase tracking-widest mb-2">Additional Images (optional)</label>
+                        <input type="file" name="images[]" id="images" accept="image/*" multiple
+                               class="w-full text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-secondary file:text-white hover:file:bg-secondary-container transition-all">
                     </div>
                     <p class="text-[10px] text-on-surface-variant mt-2">Recommended size: 800x800px. JPG, PNG or WEBP.</p>
                     @error('image') <p class="text-error text-[10px] mt-1">{{ $message }}</p> @enderror

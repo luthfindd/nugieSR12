@@ -13,9 +13,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             <!-- Product Image -->
             <div class="flex items-center justify-center bg-surface-container-low rounded-xl overflow-hidden h-[500px]">
+                <?php $mainImage = $product->image_url ?? ($product->images->first()?->image_url ?? 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjlmOWY5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg=='); ?>
                 <img class="w-full h-full object-cover" 
                      alt="<?php echo e($product->name); ?>" 
-                     src="<?php echo e($product->image_url); ?>"/>
+                     src="<?php echo e($mainImage); ?>"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjlmOWY5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPkltYWdlIGxvc3Q8L3RleHQ+PC9zdmc+';" />
             </div>
 
             <!-- Product Details -->
@@ -40,20 +42,31 @@
 
                 </p>
 
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4">
-                        <button class="w-12 h-12 flex items-center justify-center border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
-                            -
-                        </button>
-                        <span class="text-2xl font-semibold w-12 text-center">1</span>
-                        <button class="w-12 h-12 flex items-center justify-center border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
-                            +
+<form action="<?php echo e(route('cart.add')); ?>" method="POST" id="add-to-cart-form">
+                    <?php echo csrf_field(); ?>
+                    <input type="hidden" name="product_id" value="<?php echo e($product->id); ?>">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <button type="button" onclick="updateQty(-1)" class="qty-minus w-12 h-12 flex items-center justify-center border border-outline-variant rounded-lg hover:bg-surface-container transition-colors font-bold text-lg">-</button>
+                            <input type="number" name="qty" id="product-qty" value="1" min="1" max="99" class="w-20 text-center text-2xl font-bold border-0 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary ring-inset [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="updateQty(1)" class="qty-plus w-12 h-12 flex items-center justify-center border border-outline-variant rounded-lg hover:bg-surface-container transition-colors font-bold text-lg">+</button>
+                        </div>
+
+                        <button type="submit" class="editorial-gradient text-white w-full py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            Tambah ke Keranjang
                         </button>
                     </div>
+                </form>
 
-                    <button class="editorial-gradient text-white w-full py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
-                        Tambah ke Keranjang
-                    </button>
+                <script>
+                function updateQty(change) {
+                    const qty = document.getElementById('product-qty');
+                    let newQty = parseInt(qty.value) + change;
+                    newQty = Math.max(1, Math.min(99, newQty));
+                    qty.value = newQty;
+                }
+                </script>
 <a href="<?php echo e(route('product.detail', $product->slug)); ?>" class="w-full bg-surface-container text-on-surface py-4 rounded-xl font-semibold hover:bg-surface-container-high transition-colors text-center block">
                         👁️ Lihat Detail Lengkap
                     </a>

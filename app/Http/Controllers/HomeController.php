@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $featured_products = Product::where('is_featured', true)->take(4)->get();
+        $featured_products = Product::with('category')->latest()->take(12)->get();
         $categories = Category::all();
         
         return view('pages.home', [

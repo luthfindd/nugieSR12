@@ -82,12 +82,12 @@
             </div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
             @forelse($featured_products as $product)
                 <!-- Product Card -->
                 <div class="group cursor-pointer">
                     <a href="{{ route('products.show', $product->slug) }}" class="block">
-                        <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+<div class="relative aspect-square overflow-hidden rounded-xl bg-surface-container-low mb-4">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                                  alt="{{ $product->name }}" 
                                  src="{{ $product->image_url }}"/>

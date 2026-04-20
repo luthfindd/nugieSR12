@@ -81,14 +81,21 @@
                     <td class="px-6 py-5">
                         <div class="flex items-center gap-4">
                             <div class="w-14 h-14 rounded-lg bg-surface overflow-hidden shrink-0">
-                                @if ($product->image)
+                                @if ($product->image_url)
                                     <img src="{{ $product->image_url }}"
                                          alt="{{ $product->name }}"
-                                         class="w-full h-full object-cover"/>
-                                @else
-                                    <div class="w-full h-full flex items-center justify-center bg-surface-container-high">
-                                        <span class="material-symbols-outlined text-on-surface-variant">image</span>
+                                         class="w-full h-full object-cover"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+                                    <div class="w-full h-full flex items-center justify-center bg-surface-container-high text-[8px] p-1 text-on-surface-variant hidden">
+                                        {{ basename($product->image ?? '') }}<br><span class="text-[6px]">broken</span>
                                     </div>
+                                @else
+                                    <div class="w-full h-full flex items-center justify-center bg-surface-container-high text-xs text-on-surface-variant">
+                                        <span class="material-symbols-outlined">image</span><br><span class="text-[10px]">No image</span>
+                                    </div>
+                                @endif
+                                @if($product->images->count() > 0)
+                                    <div class="text-[8px] text-primary mt-1">+{{ $product->images->count() }} more</div>
                                 @endif
                             </div>
                             <div>

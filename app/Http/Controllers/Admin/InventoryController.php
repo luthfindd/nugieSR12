@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class InventoryController extends Controller
 {
@@ -58,18 +59,37 @@ class InventoryController extends Controller
             'price'       => 'required|numeric|min:0',
             'stock'       => 'required|integer|min:0',
             'description' => 'nullable|string',
-            'image'       => 'nullable|image|max:2048', // Max 2MB
+            'image'       => 'nullable|image|max:2048', // Main image, Max 2MB
+            'images.*'    => 'nullable|image|max:2048', // Additional images
         ]);
+
+        Log::info('Product creation validation passed', ['data' => $data]);
 
         $data['slug'] = Str::slug($request->name) . '-' . rand(100, 999);
 
-        // Handle Image Upload
+        // Handle Main Image Upload
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('products', 'public');
             $data['image'] = $path;
+            Log::info('Main image uploaded', ['path' => $path]);
         }
 
-        Product::create($data);
+        $product = Product::create($data);
+        Log::info('Product created', ['id' => $product->id]);
+
+        // Handle Additional Images
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $additionalImage) {
+                if ($additionalImage->isValid()) {
+                    $path = $additionalImage->store('products', 'public');
+                    $product->images()->create([
+                        'image_url' => $path,
+                        'alt_text' => $product->name . ' - Additional image',
+                    ]);
+                    Log::info('Additional image uploaded', ['path' => $path, 'product_id' => $product->id]);
+                }
+            }
+        }
 
         return redirect()->route('admin.inventory.index')
             ->with('success', 'Produk berhasil ditambahkan.');
@@ -96,20 +116,39 @@ class InventoryController extends Controller
             'price'       => 'required|numeric|min:0',
             'stock'       => 'required|integer|min:0',
             'description' => 'nullable|string',
-            'image'       => 'nullable|image|max:2048',
+            'image'       => 'nullable|image|max:2048', // Main image update
+            'images.*'    => 'nullable|image|max:2048', // Additional images
         ]);
 
-        // Handle Image Update
+        Log::info('Product update validation passed', ['product_id' => $inventory->id, 'data' => $data]);
+
+        // Handle Main Image Update
         if ($request->hasFile('image')) {
-            // Delete old image if exists
+            // Delete old main image
             if ($inventory->image && Storage::disk('public')->exists($inventory->image)) {
                 Storage::disk('public')->delete($inventory->image);
             }
             $path = $request->file('image')->store('products', 'public');
             $data['image'] = $path;
+            Log::info('Main image updated', ['path' => $path, 'product_id' => $inventory->id]);
         }
 
         $inventory->update($data);
+        Log::info('Product updated', ['id' => $inventory->id]);
+
+        // Handle Additional Images
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $additionalImage) {
+                if ($additionalImage->isValid()) {
+                    $path = $additionalImage->store('products', 'public');
+                    $inventory->images()->create([
+                        'image_url' => $path,
+                        'alt_text' => $inventory->name . ' - Additional image',
+                    ]);
+                    Log::info('Additional image added', ['path' => $path, 'product_id' => $inventory->id]);
+                }
+            }
+        }
 
         return redirect()->route('admin.inventory.index')
             ->with('success', 'Produk berhasil diperbarui.');

@@ -27,11 +27,11 @@
         </div>
 
         <!-- Products Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
             @forelse($products as $product)
                 <div class="group cursor-pointer">
-                    <a href="{{ route('products.show', $product->slug) }}" class="block group cursor-pointer">
-                        <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+                    <a href="{{ route('products.show', $product->slug) }}" class="block">
+<div class="relative aspect-square overflow-hidden rounded-xl bg-surface-container-low mb-4">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                                  alt="{{ $product->name }}" 
                                  src="{{ $product->image_url }}"/>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="space-y-2">
                             <span class="text-stone-500 text-xs uppercase tracking-widest font-bold">{{ $product->category->name }}</span>
-                            <h3 class="text-lg font-bold text-on-surface group-hover:text-primary">{{ $product->name }}</h3>
+                            <h3 class="text-lg font-bold text-on-surface">{{ $product->name }}</h3>
                             <p class="text-secondary font-semibold">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
                         </div>
                     </a>
